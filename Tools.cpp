@@ -1,4 +1,4 @@
-#include"Tools.h"
+#include"Tools.hpp"
 #include<Windows.h>
 #include<cstdio>
 
@@ -16,4 +16,14 @@ void SetCursorPosition(const int x, const int y)//设置光标的位置
     Position.X = x*2;
     Position.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Position);
+}
+
+void SetColor(int colorID)//设置文本颜色
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorID);
+}
+
+void SetBackgroundColor()//设置文本的背景颜色
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED);
 }
