@@ -3,7 +3,7 @@
 
 void SetWindowSize(int width, int length);//设置窗口的长和宽
 void SetCursorPosition(const int x, const int y);//设置光标的位置
-void SetColor();
-void SetbackgroudColor();
+void SetColor(int colorID);
+void SetbackgroundColor();
 
 #endif
