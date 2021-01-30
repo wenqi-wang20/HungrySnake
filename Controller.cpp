@@ -20,7 +20,7 @@ void Controller::Start()
     SetCursorPosition(13,26);
     std::cout << "Press any key to start...";
     SetCursorPosition(13,27);
-    system("pause")l;
+    system("pause");
 }
 
 void Controller::Select()
@@ -33,7 +33,7 @@ void Controller::Select()
     SetCursorPosition(6,21);
     std::cout << "请选择游戏难度： ";
     SetCursorPosition(6,22);
-    std::cout << "（上下键选择，回车键确认）"
+    std::cout << "（上下键选择，回车键确认）";
     SetCursorPosition(27,22);
     SetbackgroundColor();   //设置背景色显示选中的选项
     std::cout << "简单模式";
@@ -50,7 +50,7 @@ void Controller::Select()
     int ch;
     key = 1;
     bool flag = false;  //是否键入enter
-    while((ch = getch())){
+    while((ch = _getch())){
         switch (ch)
         {
         case 72:     //向上选择up
@@ -233,9 +233,9 @@ int Controller::PlayGame()   //游戏循环
                delete csnake;
                delete cfood;
                return 2;
-            }
             default:
                 break;
+            }
         }
 
         if (csnake->GetFood(*cfood)){   //吃到食物
@@ -274,7 +274,11 @@ int Controller::PlayGame()   //游戏循环
     }
 }
 
-void Controller::UpdateScore()
+void Controller::UpdateScore(const int& tmp)
+{
+    score += key * 10 * tmp;  //游戏难度与传入的权重共同决定
+}
+void Controller::RewriteScore()
 {
     //分数设置成6位右对齐
     SetCursorPosition(37,8);
@@ -313,7 +317,7 @@ int Controller::Menu()
     int ch;
     int tmp_key = 1;
     bool flag = false;
-    while((ch = getch())){
+    while((ch = _getch())){
         switch (ch)
         {
         case 72:
@@ -381,14 +385,14 @@ int Controller::Menu()
         }
         SetCursorPosition(0,31);
     }
-    if (tmp__key == 1){
+    if (tmp_key == 1){
         SetCursorPosition(32,19);
         std::cout << "      ";
         SetCursorPosition(34,21);
         std::cout << "        ";
         SetCursorPosition(34,23);
         std::cout << "        ";
-        SetCursorPosition(34，25);
+        SetCursorPosition(34,25);
         std::cout << "        ";
     }
     return tmp_key;
@@ -412,7 +416,7 @@ void Controller::Game()
     }
 }
 
-void Controller::GameOver()
+int Controller::GameOver()
 {
     Sleep(500);
     SetColor(11);
@@ -470,7 +474,7 @@ void Controller::GameOver()
     int ch;
     int tmp_key = 1;
     bool flag = false;
-    while ((ch = getch())){
+    while ((ch = _getch())){
         switch (ch)
         {
         case 75:

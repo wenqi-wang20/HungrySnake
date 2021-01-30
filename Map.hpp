@@ -10,9 +10,9 @@ public:
         for (int i = 1; i <= 30; i++){
             initmap.emplace_back(Point(i,1));
         }
-        for (int j = 2; j <= 29; i++){
-            initmap.emplace_back(Point(1,i));
-            initmap.emplace_back(Point(30,i));
+        for (int j = 2; j <= 29; j++){
+            initmap.emplace_back(Point(1,j));
+            initmap.emplace_back(Point(30,j));
         }
         for (int i = 1; i <= 30; i++){
             initmap.emplace_back(Point(i,30));

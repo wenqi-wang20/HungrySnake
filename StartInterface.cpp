@@ -31,7 +31,7 @@ void Startinterface::PrintThird()  //蛇从接触右边到逐渐消失
         }
         ClearText();
         PrintText();
-        Sleep(sleep);
+        Sleep(speed);
     }
 }
 

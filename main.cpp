@@ -1,6 +1,10 @@
+#include"Controller.hpp"
 #include<Windows.h>
-int main(){
-    system("notepad");
-    system("pause");
+#pragma comment(lib,"Winmm.lib")
+
+int main() {
+    PlaySound(TEXT("./melancholy.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+    Controller c;
+    c.Game();
     return 0;
 }

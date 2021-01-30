@@ -13,7 +13,7 @@ void Food::DrawFood(Snake& csnake)   //绘制食物，随机种子生成2-30以�
         bool flag = false;
         for (auto& point : csnake.snake){
             if (point.GetX() == tmp_x && point.GetY() == tmp_y || tmp_x == time_x && tmp_y == time_y){
-                flag == true;
+                flag = true;
                 break;
             }
         }
@@ -48,7 +48,7 @@ void Food::DrawTimeFood(Snake& csnake)
         bool flag = false;
         for (auto& point : csnake.snake){
             if (point.GetX() == tmp_x && point.GetY() == tmp_y || tmp_x == time_x && tmp_y == time_y){
-                flag == true;
+                flag = true;
                 break;
             }
         }

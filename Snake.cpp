@@ -67,8 +67,8 @@ bool Snake::HitItself()
 bool Snake::ChangeDirection()
 {
     char ch;
-    if (kbhit()){
-        ch = getch();
+    if (_kbhit()){
+        ch = _getch();
         switch (ch)
         {
         case -32:
