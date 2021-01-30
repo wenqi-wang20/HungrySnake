@@ -2,16 +2,16 @@
 #include"Points.hpp"
 #include<iostream>
 
-void Point::Print()   //打印出小狗
+void Point::Print()   //打印出方形边框
 {
     SetCursorPosition(x,y);
-    std::cout << "🐕";
+    std::cout << "■";
 }
 
-void Point::PrintCircular() //打印小鱼
+void Point::PrintCircular() //打印小蛇
 {
     SetCursorPosition(x,y);
-    std::cout << "🐟";
+    std::cout << "●";
 }
 
 void Point::Clear() //清除输出
