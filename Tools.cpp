@@ -23,7 +23,7 @@ void SetColor(int colorID)//设置文本颜色
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorID);
 }
 
-void SetBackgroundColor()//设置文本的背景颜色
+void SetbackgroundColor()//设置文本的背景颜色
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE | BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED);
 }

@@ -35,6 +35,15 @@ void Startinterface::PrintThird()  //蛇从接触右边到逐渐消失
     }
 }
 
+void Startinterface::PrintText()
+{
+    for (auto& point : starttxt){
+        if (point.GetX() >= 0){
+            point.Print();
+        }
+    }
+}
+
 void Startinterface::ClearText()
 {
     for (auto& point : starttxt){

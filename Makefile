@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -c
-CG = -std=c++17
+CG = -std=c++11
 CLINK = -o
 SOURCES = main.cpp Controller.cpp Food.cpp Map.cpp Points.cpp Snake.cpp StartInterface.cpp Tools.cpp
 OBJECTS = $(SOURCES:.cpp = .o)
