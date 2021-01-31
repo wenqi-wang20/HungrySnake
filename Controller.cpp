@@ -18,7 +18,7 @@ void Controller::Start()
     delete start;
 
     SetCursorPosition(13,26);
-    std::cout << "Press any key to start...";
+    //std::cout << "Press any key to start...";
     SetCursorPosition(13,27);
     system("pause");
 }
@@ -218,7 +218,7 @@ int Controller::PlayGame()   //游戏循环
     cfood ->DrawFood(*csnake);
 
     //游戏循环
-    while(!csnake->OverEgde() && !csnake->HitItself()){ //判断蛇是否已经撞墙
+    while(csnake->OverEgde() && csnake->HitItself()){ //判断蛇是否已经撞墙
         if (!csnake->ChangeDirection()){   //按esc时
             int tmp = Menu();  //调出菜单
             switch (tmp)
@@ -401,7 +401,7 @@ int Controller::Menu()
 void Controller::Game()
 {
     Start();
-    while(1){
+    while(true){
         Select();
         DrawGame();
         int tmp = PlayGame();
@@ -420,49 +420,49 @@ int Controller::GameOver()
 {
     Sleep(500);
     SetColor(11);
-    SetCursorPosition(10,8);
+    SetCursorPosition(9,8);
     std::cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
     Sleep(30);
     SetCursorPosition(9,9);
-    std::cout << "┃            Game Over!!!!              ┃";
+    std::cout << "┃             Game Over!!!!              ┃";
     Sleep(30);
     SetCursorPosition(9,10);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,11);
-    std::cout << "┃           很遗憾，你挂了！             ┃";
+    std::cout << "┃            很遗憾，你挂了！            ┃";
     Sleep(30);
     SetCursorPosition(9,12);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,13);
-    std::cout << "┃         你的分数为：                 ┃";
+    std::cout << "┃          你的分数为：                  ┃";
     SetCursorPosition(24,13);
     std::cout << score;
     Sleep(30);
     SetCursorPosition(9,14);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,15);
-    std::cout << "┃         是否再来一局？？               ┃";
+    std::cout << "┃          是否再来一局？？              ┃";
     Sleep(30);
     SetCursorPosition(9,16);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,17);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,18);
-    std::cout << "┃  嗯嗯好        不了，我还是更爱学习   ┃";
+    std::cout << "┃   嗯嗯好     不了，我还是更爱学习      ┃";
     Sleep(30);
     SetCursorPosition(9,19);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
     SetCursorPosition(9,20);
-    std::cout << "┃                                       ┃";
+    std::cout << "┃                                        ┃";
     Sleep(30);
-    SetCursorPosition(10,21);
-    std::cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+    SetCursorPosition(9,21);
+    std::cout << "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
     Sleep(100);
     SetCursorPosition(11,18);
@@ -482,7 +482,7 @@ int Controller::GameOver()
                 SetCursorPosition(11,18);
                 SetbackgroundColor();
                 std::cout << "嗯嗯好";
-                SetCursorPosition(18,18);
+                SetCursorPosition(16,18);
                 SetColor(11);
                 std::cout << "不了，我还是更爱学习";
                 tmp_key--;
@@ -490,7 +490,7 @@ int Controller::GameOver()
             break;
         case 77:
             if (tmp_key < 2){
-                SetCursorPosition(18,18);
+                SetCursorPosition(16,18);
                 SetbackgroundColor();
                 std::cout << "不了，我还是更爱学习";
                 SetCursorPosition(11,18);

@@ -19,8 +19,10 @@ void Snake::Move()
         break;
     case Direction::DOWN:
         snake.emplace_back(Point(snake.back().GetX(), snake.back().GetY() + 1));
+        break;
     case Direction::LEFT:
         snake.emplace_back(Point(snake.back().GetX() - 1, snake.back().GetY()));
+        break;
     case Direction::RIGHT:
         snake.emplace_back(Point(snake.back().GetX() + 1, snake.back().GetY()));    
     default:
@@ -72,6 +74,7 @@ bool Snake::ChangeDirection()
         switch (ch)
         {
         case -32:
+            ch = _getch();
             switch (ch)
             {
             case 72:

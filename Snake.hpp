@@ -14,7 +14,7 @@ public:
         snake.emplace_back(Point(14,8));
         snake.emplace_back(Point(15,8));
         snake.emplace_back(Point(16,8));
-        direction = Direction::DOWN;
+        direction = Direction::RIGHT;
     }
     void InitSnake();
     void Move();

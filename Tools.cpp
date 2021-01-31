@@ -6,7 +6,7 @@ void SetWindowSize(int cols, int lines)//设置窗口的长和宽
 {
     system("title HungrySnake");  //设置控制台的标题
     char wincmd[35];
-    sprintf_s(wincmd,35, "mode con cols=d% lines=%d", cols*2, lines);//方便将其他类型的数据转化为字符串的形式进行储存
+    sprintf(wincmd, "mode con cols=%d lines=%d", cols*2, lines);//方便将其他类型的数据转化为字符串的形式进行储存
     system(wincmd);//cols=88, lines=88设置窗口宽度、高度
 }
 
